@@ -1,10 +1,23 @@
 package Dia1009;
 
-public class Cavalo extends Animais {
+public class Cavalo extends BaseAnimais implements Animais{
 	
-	public Cavalo()
+	public Cavalo (String nome, int idade)
 	{
-		super("Trovão",7,"relincha","corre.");
+		super(nome,idade);
 	}
+
+    @Override
+    public void emiteSom()
+    {
+    	System.out.println("\nO cavalo relincha.");
+    }
+	
+    @Override
+    public void seMove()
+    {
+    	System.out.println("\nO cavalo corre.");
+    }
+	
 	
 }
