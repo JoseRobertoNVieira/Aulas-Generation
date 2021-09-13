@@ -1,16 +1,11 @@
 package projetoreciclagem;
 
-public class MaterialPlastico extends MaterialReciclavel implements Reciclagem {
-	
+public class MaterialPlastico extends MaterialReciclavel  implements Reciclagem{
+
 	private int garrafaPet;
-	private int embalagemPlastica;
+	private int embalagens;
 	private double outrosPlasticos;
 	
-	public MaterialPlastico(int tipo)
-	{
-	       super(tipo);
-	}
-
 	public int getGarrafaPet() {
 		return garrafaPet;
 	}
@@ -19,12 +14,12 @@ public class MaterialPlastico extends MaterialReciclavel implements Reciclagem {
 		this.garrafaPet = garrafaPet;
 	}
 
-	public int getEmbalagemPlastica() {
-		return embalagemPlastica;
+	public int getEmbalagens() {
+		return embalagens;
 	}
 
-	public void setEmbalagemPlastica(int embalagemPlastica) {
-		this.embalagemPlastica = embalagemPlastica;
+	public void setEmbalagens(int embalagens) {
+		this.embalagens = embalagens;
 	}
 
 	public double getOutrosPlasticos() {
@@ -34,44 +29,98 @@ public class MaterialPlastico extends MaterialReciclavel implements Reciclagem {
 	public void setOutrosPlasticos(double outrosPlasticos) {
 		this.outrosPlasticos = outrosPlasticos;
 	}
-	
+
 	@Override
-	public void descartar()
+	public void descartar() 
 	{
-	System.out.println("\n\t-- Escolha o tipo de plástico que deseja descartar --");
-	System.out.println("\n\t1 - Garrafa pet\n\t2 - Embalagem plástica \n\t3 - Outro tipo de plástico\n\t4 - Sair");
-	setTipo(leia.nextInt());
-	
-	while(getTipo() < 1 || getTipo() > 4)
-	{
-		System.out.println("\nOpção Inválida");
 		System.out.println("\n\t-- Escolha o tipo de plástico que deseja descartar --");
 		System.out.println("\n\t1 - Garrafa pet\n\t2 - Embalagem plástica \n\t3 - Outro tipo de plástico\n\t4 - Sair");
 		setTipo(leia.nextInt());
+		
+		while(getTipo() < 1 || getTipo() > 4)
+		{
+			System.out.println("\nOpção Inválida");
+			System.out.println("\n\t-- Escolha o tipo de plástico que deseja descartar --");
+			System.out.println("\n\t1 - Garrafa pet\n\t2 - Embalagem plástica \n\t3 - Outro tipo de plástico\n\t4 - Sair");
+			setTipo(leia.nextInt());
+		}
+		
+		switch(getTipo())
+		{
+		case 1:
+			System.out.println("\nRetire todo o conteúdo da garrafa, e também o rótulo (se possivel, lave).\nCom a garrafa aberta, amasse-a, e depois, coloque a tampa.\nDescarte-a no cesto destinado ao plástico ou separado do lixo orgânico.");
+			break;
+		case 2:
+			System.out.println("\nRetire quaisquer partes não plásticas do conteúdo (se possivel, lave).\nDescarte-a no cesto destinado ao plástico ou separado do lixo orgânico.");
+			break;
+		case 3:
+			System.out.println("\nRetire quaisquer partes não plásticas do conteúdo (se possivel, lave).\nDescarte-a no cesto destinado ao plástico ou separado do lixo orgânico.");
+		    break;	
+		    default:
+				System.out.println("Obrigado por utilizar nosso sistema. Saindo ...");
+		}
 	}
-	
-	switch(getTipo())
+
+	@Override
+	public void calcularReciclaveis() 
 	{
-	case 1:
-		System.out.println("\nRetire todo o conteúdo da garrafa, e também o rótulo (se possivel, lave).\nCom a garrafa aberta, amasse-a, e depois, coloque a tampa.\nDescarte-a no cesto destinado ao plástico ou separado do lixo orgânico.");
-		break;
-	case 2:
-		System.out.println("\nRetire quaisquer partes não plásticas do conteúdo (se possivel, lave).\nDescarte-a no cesto destinado ao plástico ou separado do lixo orgânico.");
-		break;
-	case 3:
-		System.out.println("\nRetire quaisquer partes não plásticas do conteúdo (se possivel, lave).\nDescarte-a no cesto destinado ao plástico ou separado do lixo orgânico.");
-	    break;	
-	    default:
-			System.out.println("Obrigado por utilizar nosso sistema. Saindo ...");
+    boolean validaPlastico = false;
+		
+		System.out.println("Digite o tipo de plástico a ser descartado:\n[Garrafa pet] \n[Embalagem] \n[Outros]");
+		setEscolha(leia.nextLine());
+		
+		do {
+			if (getEscolha().equalsIgnoreCase("Garrafa pet") || getEscolha().equalsIgnoreCase("Embalagem") || getEscolha().equalsIgnoreCase("Outros")) {
+				validaPlastico = true;
+			} else {
+				validaPlastico = false;
+				System.out.println("Opção não encontrada! escolha uma das opções abaixo para descarte:\n[Garrafa pet] \n[Embalagem] \n[Outros]");
+				setEscolha(leia.nextLine());
+		    }	
+		} while (!validaPlastico); //negação de true, condição falsa e saída do laço
+		
+		if(getEscolha().equalsIgnoreCase("Garrafa pet")) 
+		{
+			System.out.println("Qual a quantidade de Garrafas pet a serem descartadas?");
+			setGarrafaPet(leia.nextInt());
+		}
+		if(getEscolha().equalsIgnoreCase("Embalagem")) 
+		{
+			System.out.println("Qual a quantidade de embalagens a serem descartadas?");
+			setEmbalagens(leia.nextInt());
+		}
+		if(getEscolha().equalsIgnoreCase("Outros")) 
+		{
+			System.out.println("Qual a quantidade de outros materiais plásticos a serem descartados(em gramas)?");
+			setOutrosPlasticos(leia.nextDouble());
+		}
+		this.danoAmbiente();
+			
 	}
-	}
-	
+
 	@Override
 	public void danoAmbiente() 
 	{
-		System.out.println("\nO plástico leva em média 400 anos para se decompor e ainda libera gases tóxicos que podem afetar o solo, a água e o ar, prejudicando alimentos, animais causando doenças nas pessoas.");
+		if(getEscolha().equalsIgnoreCase("Garrafa pet")) 
+		{
+			System.out.println("Você deixará de descartar " +garrafaPet+ " garrafas pet no meio ambiente e elas poderão ser reutilizadas! Parabéns!");
+		}
+		if(getEscolha().equalsIgnoreCase("Embalagem")) 
+		{
+			System.out.println("Você deixará de descartar " +embalagens+ " embalagens no meio ambiente e elas poderão ser reutilizadas! Parabéns!");
+		}
+		if(getEscolha().equalsIgnoreCase("Outros")) 
+		{
+			System.out.println("Você deixará de descartar " +outrosPlasticos+ " gramas de outros plásticos no meio ambiente e eles poderão ser reutilizados! Parabéns!");
+		}
+		
+		System.out.println("\n========== Impacto ambiental  ===========\n\n"
+				+ "- Ao reciclar ou reutilizar, evitamos a geração de resíduos de plástico. \n"
+                + "- Reduzimos o consumo de água.\n"
+                + "- O plástico leva em média 400 anos para se decompor e ainda libera gases tóxicos que podem afetar o solo,"
+				+ " a água e o ar, prejudicando alimentos, animais causando doenças nas pessoas.");
 	}
-	
+
 	@Override
 	public void reutilizar() 
 	{
@@ -102,7 +151,7 @@ public class MaterialPlastico extends MaterialReciclavel implements Reciclagem {
 			default:
 				System.out.println("Obrigado por utilizar nosso sistema. Saindo ...");
 		}
-		}
-	
-	
+		
+	}
+
 }
