@@ -34,14 +34,14 @@ public class MaterialPlastico extends MaterialReciclavel  implements Reciclagem{
 	public void descartar() 
 	{
 		System.out.println("\n\t-- Escolha o tipo de plástico que deseja descartar --");
-		System.out.println("\n\t1 - Garrafa pet\n\t2 - Embalagem plástica \n\t3 - Outro tipo de plástico\n\t4 - Sair");
+		System.out.println("\n1-Garrafa pet\n2-Embalagem plástica \n3-Outro tipo de plástico\n4-Sair");
 		setTipo(leia.nextInt());
 		
 		while(getTipo() < 1 || getTipo() > 4)
 		{
 			System.out.println("\nOpção Inválida");
 			System.out.println("\n\t-- Escolha o tipo de plástico que deseja descartar --");
-			System.out.println("\n\t1 - Garrafa pet\n\t2 - Embalagem plástica \n\t3 - Outro tipo de plástico\n\t4 - Sair");
+			System.out.println("\n1-Garrafa pet\n2-Embalagem plástica \n3-Outro tipo de plástico\n4-Sair");
 			setTipo(leia.nextInt());
 		}
 		
@@ -125,14 +125,14 @@ public class MaterialPlastico extends MaterialReciclavel  implements Reciclagem{
 	public void reutilizar() 
 	{
 		System.out.println("\n\t-- Escolha o tipo de plástico que deseja reutilizar --");
-		System.out.println("\n\t1 - Garrafa pet\n\t2 - Embalagem plástica \n\t3 - Outro tipo de plástico\n\t4 - Sair");
+		System.out.println("\n\t1-Garrafa pet\n\t2-Embalagem plástica \n\t3-Outro tipo de plástico\n\t4 - Sair");
 		setTipo(leia.nextInt());
 		
 		while(getTipo() < 1 || getTipo() > 4)
 		{
 			System.out.println("\nOpção Inválida");
 			System.out.println("\n\t-- Escolha o tipo de plástico que deseja reutilizar --");
-			System.out.println("\n\t1 - Garrafa pet\n\t2 - Embalagem plástica \n\t3 - Outro tipo de plástico\n\t4 - Sair");
+			System.out.println("\n\t1-Garrafa pet\n\t2-Embalagem plástica \n\t3-Outro tipo de plástico\n\t4-Sair");
 			setTipo(leia.nextInt());
 		}
 		

@@ -28,15 +28,15 @@ public class MaterialMetal extends MaterialReciclavel implements Reciclagem {
 	@Override
 	public void descartar() 
 	{
-		System.out.println("Informe qual é a opção de metal que deseja descartar: ");
-		System.out.println("[1]Ferro\n[2]Aluminio\n[3]Cobre\n[4]Sair");
+		System.out.println("\n\t-- Escolha o tipo de metal que deseja descartar --");
+		System.out.println("1-Ferro\n2-Aluminio\n3-Cobre\n4-Sair");
 		setTipo(leia.nextInt());
 		
 		while(getTipo() < 1 || getTipo() > 4) 
 		{
 			System.out.println("Opção inválida");
-			System.out.println("Informe qual é a opção de metal que deseja descartar: ");
-			System.out.println("[1]Ferro\n[2]Aluminio\n[3]Cobre\n[4]Sair");
+			System.out.println("\n\t-- Escolha o tipo de metal que deseja descartar --");
+			System.out.println("1-Ferro\n2-Aluminio\n3-Cobre\n4-Sair");
 			setTipo(leia.nextInt());
 		}
 	
@@ -94,7 +94,7 @@ public class MaterialMetal extends MaterialReciclavel implements Reciclagem {
 				setCobre(leia.nextDouble());
 			}
 			this.danoAmbiente();
-				
+			
 	}
 	@Override
 	public void danoAmbiente() 
@@ -111,7 +111,7 @@ public class MaterialMetal extends MaterialReciclavel implements Reciclagem {
 		{
 			System.out.println("Você deixará de descartar " +cobre+ " gramas de cobre no meio ambiente e eles poderão ser reutilizados! Parabéns!");
 		}
-		
+				
 		System.out.println("\n========== Impacto ambiental  ===========\n\n"
 				+ "- Ao reciclar ou reutilizar, evitamos a geração de resíduos de metais. \n"
                 + "- Os impactos ambientais ao meio ambiente decorrentes da mineração e refinação de metais são diminuídos\n"

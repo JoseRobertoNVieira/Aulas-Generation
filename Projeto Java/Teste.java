@@ -1,5 +1,7 @@
 package projetoreciclagem;
 
+
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -9,39 +11,46 @@ public class Teste {
 		// TODO Auto-generated method stub
 		
 		Scanner leia = new Scanner(System.in);
+		
 		MaterialPapel papel = new MaterialPapel();
 		MaterialPlastico plastico = new MaterialPlastico();
 		MaterialMetal metal = new MaterialMetal();
 		MaterialVidro vidro = new MaterialVidro();
 		MaterialEspecial especial = new MaterialEspecial();
 		
+		ArrayList <String> usuarios = new ArrayList <String>();
+		
 		int op;
 		int op2;
 		boolean loop = true;
+		
+		System.out.println("\nBem-vindo ao Sistema de Reciclagem!");
+		System.out.println("\nPara começar, insira o seu nome: ");
+		String nome = leia.nextLine();
+		usuarios.add(nome);
 		
 		do
 		{
 		try
 		{
-		System.out.println("\nBem-vindo ao Sistema de Reciclagem!");
 		System.out.println("\nEscolha a categoria do item que deseja reciclar: ");
-		System.out.println("\n1-Papel\n2-Plástico\n3-Metal\n4-Vidro\n5-Especiais\n6-Sair\n\n\n");
+		System.out.println("\n1-Papel\n2-Plástico\n3-Metal\n4-Vidro\n5-Especiais\n6-Verificar lista de usuários\n7-Sair\n\n\n");
         op = leia.nextInt();
 
-        while(op < 1 || op > 6)
+        while(op < 1 || op > 7)
         {
         System.out.println("\nOpção Inválida, tente novamente.");
 		System.out.println("\nEscolha a categoria do item que deseja reciclar: ");
-		System.out.println("\n1-Papel\n2-Plástico\n3-Metal\n4-Vidro\n5-Especiais\n6-Sair\n\n\n");
+		System.out.println("\n1-Papel\n2-Plástico\n3-Metal\n4-Vidro\n5-Especiais\n6-Verificar lista de usuários\n7-Sair\n\n\n");
         op = leia.nextInt();
         }
         switch(op)
         {
         case 1: // PAPEL
-        	System.out.println();
+        	
         	System.out.println("\n---O material escolhido foi Papel---");
             System.out.println("\nSelecione o que deseja fazer com o papel: ");
-            System.out.println("\n1-Descartar\n2-Calcular o impacto no ambiente\n3-Reutilizar\n4-Sair\n\n\n ");
+            System.out.println("\n1-Descartar\n2-Calcular o impacto no ambiente\n3-Reutilizar\n\n\n ");
             op2 = leia.nextInt();
            
             if(op2 == 1)
@@ -56,12 +65,16 @@ public class Teste {
             {
             	papel.reutilizar();
             }
+            else
+            {
+            	System.out.println("\nOpção Inválida. Voltando ao menu principal.");
+            }
             break;
         case 2: // PLASTICO
-        	System.out.println();
+        	
         	System.out.println("\n---O material escolhido foi Plástico---");
             System.out.println("\nSelecione o que deseja fazer com o plástico: ");
-            System.out.println("\n1-Descartar\n2-Calcular o impacto no ambiente\n3-Reutilizar\n4-Sair\n\n\n ");
+            System.out.println("\n1-Descartar\n2-Calcular o impacto no ambiente\n3-Reutilizar\n\n\n ");
             op2 = leia.nextInt();
             
             if(op2 == 1)
@@ -76,12 +89,16 @@ public class Teste {
             {
             	plastico.reutilizar();
             }
+            else
+            {
+            	System.out.println("\nOpção Inválida. Voltando ao menu principal.");
+            }
             break;
         case 3: // METAL
-        	System.out.println();
+        	
         	System.out.println("\n---O material escolhido foi Metal---");
             System.out.println("\nSelecione o que deseja fazer com o metal: ");
-            System.out.println("\n1-Descartar\n2-Calcular o impacto no ambiente\n3-Reutilizar\n4-Sair\n\n\n ");
+            System.out.println("\n1-Descartar\n2-Calcular o impacto no ambiente\n3-Reutilizar\n\n\n ");
             op2 = leia.nextInt();
             
             if(op2 == 1)
@@ -96,12 +113,16 @@ public class Teste {
             {
             	metal.reutilizar();
             }
+            else
+            {
+            	System.out.println("\nOpção Inválida. Voltando ao menu principal.");
+            }
             break;
         case 4: // VIDRO
-        	System.out.println();
+        	
         	System.out.println("\n---O material escolhido foi Vidro---");
             System.out.println("\nSelecione o que deseja fazer com o vidro: ");
-            System.out.println("\n1-Descartar\n2-Calcular o impacto no ambiente\n3-Reutilizar\n4-Sair\n\n\n ");
+            System.out.println("\n1-Descartar\n2-Calcular o impacto no ambiente\n3-Reutilizar\n\n\n ");
             op2 = leia.nextInt();
             
             if(op2 == 1)
@@ -116,12 +137,16 @@ public class Teste {
             {
             	vidro.reutilizar();
             }
+            else
+            {
+            	System.out.println("\nOpção Inválida. Voltando ao menu principal.");
+            }
             break;
         case 5: // ESPECIAL
-        	System.out.println();
+        	
         	System.out.println("\n---O material escolhido foi Especial---");
             System.out.println("\nSelecione o que deseja fazer com o material especial: ");
-            System.out.println("\n1-Descartar\n2-Calcular o impacto no ambiente\n3-Reutilizar\n4-Sair\n\n\n ");
+            System.out.println("\n1-Descartar\n2-Calcular o impacto no ambiente\n3-Reutilizar\n\n\n ");
             op2 = leia.nextInt();
             
             if(op2 == 1)
@@ -136,16 +161,23 @@ public class Teste {
             {
             	especial.reutilizar();
             }
+            else
+            {
+            	System.out.println("\nOpção Inválida. Voltando ao menu principal.");
+            }
             break;
-        case 6: // SAIR
+        case 6:
+        	System.out.println(usuarios);
+        	break;
+        case 7: // SAIR
         	System.out.println("\nObrigado por utilizar nosso sistema. Saindo ...");
+        	loop = false;
         	break;
             default:
             {
-            	System.out.println("\nOpção inválida, saindo do sistema");
+            	System.out.println("\n");
             }
         }
-        loop = false;
         }
 		catch(InputMismatchException inputMismatchException)
 		{
@@ -154,7 +186,7 @@ public class Teste {
     	    System.out.println("\nVocê deve entrar com um valor do tipo inteiro. "
     	    		+ "Por favor, tente novamente\n");
 		}
-   }
-   while(loop);
+   }while(loop);
+
 }
 }

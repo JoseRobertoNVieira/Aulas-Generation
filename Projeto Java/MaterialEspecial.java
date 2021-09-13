@@ -28,14 +28,14 @@ public class MaterialEspecial extends MaterialReciclavel implements Reciclagem {
 	@Override
 	public void descartar() 
 	{
-		System.out.println("QUAL TIPO DE COMPONENTE DESEJA DESCARTAR: ");
-		System.out.println("[1]Pilha\n[2]Bateria\n[3]Celular\n[4]Sair");
+		System.out.println("\n\t-- Escolha o tipo de material especial que deseja descartar --");
+		System.out.println("1-Pilha\n2-Bateria\n3-Celular\n4-Sair");
 		setTipo(leia.nextInt());
 		while(getTipo() < 1||getTipo () > 4) 
 		{
 			System.out.println("Opção Inválida! tente novamente.\n");
-			System.out.println("QUAL TIPO DE CONPONENTE DESEJA DESCARTAR: ");
-			System.out.println("[1]Pilha\n[2]Bateria\n[3]Celular\n[4]Sair");
+			System.out.println("\n\t-- Escolha o tipo de material especial que deseja descartar --");
+			System.out.println("1-Pilha\n2-Bateria\n3-Celular\n4-Sair");
 			setTipo(leia.nextInt()); 
 		}
 		

@@ -32,14 +32,14 @@ public class MaterialVidro extends MaterialReciclavel implements Reciclagem {
 	@Override
 	public void descartar() {
 		
-		System.out.println("SELECIONE A OPÇÃO PARA O TIPO DE VIDRO QUE DESEJA DESCARTAR");
-		System.out.println("[1]Garrafa\n[2]Cacos \n[3]Recipiente\n[4]Sair");
+		System.out.println("\n\t-- Escolha o tipo de vidro que deseja descartar --");
+		System.out.println("1-Garrafa\n2-Cacos \n3-Recipiente\n4-Sair");
 		setTipo(leia.nextInt());
 		while(getTipo() < 1 || getTipo() > 4) 
 		{
 			System.out.println("Opção inválida");
-			System.out.println("SELECIONE A OPÇÃO PARA O TIPO DE VIDRO QUE DESEJA DESCARTAR");
-			System.out.println("[1]Garrafa\n[2]Cacos \n[3]Recipiente \n[4]Sair");
+			System.out.println("\n\t-- Escolha o tipo de vidro que deseja descartar --");
+			System.out.println("1-Garrafa\n2-Cacos \n3-Recipiente \n4-Sair");
 			setTipo(leia.nextInt());
 		}
 		switch(getTipo()) 
