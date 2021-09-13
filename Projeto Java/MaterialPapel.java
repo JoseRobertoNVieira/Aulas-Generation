@@ -47,14 +47,14 @@ public class MaterialPapel extends MaterialReciclavel implements Reciclagem {
 	public void descartar() 
 	{
 		System.out.println("Descarte da maneira correta. \nComo está a situação do seu papel?  \n1 - Limpo \n2 - Sujo \n3 - Contaminado biologicamente e/ou"
-				+ " quimicamente \n4 - Sair");
+				+ " quimicamente \n4-Voltar ao menu principal");
 		System.out.println("\nDigite sua opção: ");
 		setTipo(leia.nextInt());
 		
 		while(getTipo() < 1 || getTipo() >4)
 		{
 			System.out.println("Qual o estado do papel que deseja descartar? \n1 - Limpo \n2 - Sujo \n3 - Contaminado biologicamente e/ou"
-					+ " quimicamente? \n4 - Sair");
+					+ " quimicamente? \n4-Voltar ao menu principal");
 			setTipo(leia.nextInt());
 		}
 		switch (getTipo())
@@ -148,11 +148,11 @@ public class MaterialPapel extends MaterialReciclavel implements Reciclagem {
 	@Override
 	public void reutilizar() 
 	{
-		System.out.println("Selecione a condição do papel: \n[1]Limpo\n[2]Sujo\n[3]Contaminado");
+		System.out.println("Selecione a condição do papel: \n1-Limpo\n2-Sujo\n3-Contaminado");
 		setTipo(leia.nextInt());
 		while(getTipo() < 1 || getTipo() > 3) 
 		{
-			System.out.println("\nOpção inválida! Selecione a condição do papel: \n[1]Limpo\n[2]Sujo\n[3]Contaminado");
+			System.out.println("\nOpção inválida! Selecione a condição do papel: \n1-Limpo\n2-Sujo\n3-Contaminado");
 			setTipo(leia.nextInt());
 		}
 		if(getTipo() == 2 || getTipo() == 3) {

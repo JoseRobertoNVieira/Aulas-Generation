@@ -33,13 +33,13 @@ public class MaterialVidro extends MaterialReciclavel implements Reciclagem {
 	public void descartar() {
 		
 		System.out.println("\n\t-- Escolha o tipo de vidro que deseja descartar --");
-		System.out.println("1-Garrafa\n2-Cacos \n3-Recipiente\n4-Sair");
+		System.out.println("1-Garrafa\n2-Cacos \n3-Recipiente\n4-Voltar ao menu principal");
 		setTipo(leia.nextInt());
 		while(getTipo() < 1 || getTipo() > 4) 
 		{
-			System.out.println("Opção inválida");
+			System.out.println("Opção Inválida! tente novamente.\n");
 			System.out.println("\n\t-- Escolha o tipo de vidro que deseja descartar --");
-			System.out.println("1-Garrafa\n2-Cacos \n3-Recipiente \n4-Sair");
+			System.out.println("1-Garrafa\n2-Cacos \n3-Recipiente \n4-Voltar ao menu principal");
 			setTipo(leia.nextInt());
 		}
 		switch(getTipo()) 
@@ -126,11 +126,13 @@ public class MaterialVidro extends MaterialReciclavel implements Reciclagem {
     public void reutilizar() 
     {
     	
-    	System.out.println("Selecione o tipo de vidro a ser reutilizado ou descartado: \n[1]Garrafas\n[2]Cacos\n[3]Recipientes");
+    	System.out.println("\\n\\t-- Escolha o tipo de vidro que deseja reutilizar --: \n1-Garrafas\n2-Cacos\n3-Recipientes");
 		setTipo(leia.nextInt());
 		while(getTipo() < 1 || getTipo() > 3) 
 		{
-			System.out.println("Opção inválida! Selecione o tipo de vidro a ser reutilizado ou descartado: \n[1]Garrafas\n[2]Cacos\n[3]Recipientes");
+			System.out.println("Opção Inválida! tente novamente.\n");
+			System.out.println("\n\t-- Escolha o tipo de plástico que deseja reutilizar --");
+			System.out.println("\n1-Garrafas\n2-Cacos\n3-Recipientes");
 			setTipo(leia.nextInt());
 		}
     	if(getTipo() == 1) 
