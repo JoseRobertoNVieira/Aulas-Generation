@@ -1,0 +1,1 @@
+http://blogpessoalnomeoriginal.herokuapp.com/swagger-ui/#/
