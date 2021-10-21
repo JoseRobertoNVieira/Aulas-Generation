@@ -1,0 +1,74 @@
+/* ALINHAMENTO */
+
+.centro {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.p-30 {
+    padding: 30px;
+}
+
+/* MENU */
+
+.menu li {
+
+    display: inline;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.menu li a:hover {
+    color: rgb(127, 90, 170);
+}
+
+/* FONTE */
+
+.pfonte {
+    font-family:helvetica ;
+    font-size: 17px;
+}
+
+.tfonte {
+    font-family: Verdana;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+}
+
+.tm-social {
+    width: 50px;
+    height: 50px;
+}
+
+.ctexto {
+    color: blanchedalmond;
+}
+
+
+/* BODY */
+
+body {
+    background-color: #ffae00;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right bottom;
+    }
+    h1 {
+    color: #d60101;
+    background-color: #9e3208;
+    
+    }
