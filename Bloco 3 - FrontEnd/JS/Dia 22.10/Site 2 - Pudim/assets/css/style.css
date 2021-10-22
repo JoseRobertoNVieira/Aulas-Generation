@@ -1,6 +1,6 @@
 /* ALINHAMENTO */
 
-   .centro {
+.centro {
     text-align: center;
 }
 
@@ -61,14 +61,14 @@
 /* BODY */
 
 body {
-    background-color: #ff0000;
-    background-image: url("/assets/img/fundo.png");
+    background-color: #ffae00;
+    background-image: url("");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: right bottom;
     }
     h1 {
     color: #d60101;
-    background-color: #701111;
+    background-color: #9e3208;
     
     }
